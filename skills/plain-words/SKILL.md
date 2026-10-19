@@ -23,6 +23,7 @@ Write for a smart colleague who wasn't in the project. Use words they already kn
 - **Coined labels** ("regulars", "end fifths", "the dial", "arms", "main set"). Replace each with what it measures.
 - **Text only the writer needs:** file names, variables, job ids, internal section labels, notes for the next agent, provenance bookkeeping. Move sources to a sources list; delete the rest.
 - **Hedge words:** "it seems possible", "to our knowledge", repeated disclaimers.
+- **Pet terms, found by counting.** In a long piece, list the most frequent 1–3-word phrases (lowercase, plurals folded, stop words dropped). For each frequent phrase, ask whether a reader in the field would use those words; rename the ones they wouldn't, everywhere at once (text, tables, figure labels).
 - **Labels seeded by notes.** Project notes, memory and glossaries spread coined labels into later writing. When you replace one, fix it at the source too, and list the old name as one to avoid.
 
 ## Keep
