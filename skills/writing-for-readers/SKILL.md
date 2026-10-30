@@ -18,7 +18,9 @@ Your reader wasn't there. They know the field, not your project, and they skim. 
 - **Say how big an effect is, even when small** ("adds about 0.3% to the fit").
 - **Don't sabotage the finding.** Don't add contrasts nobody asked for unless they change what the reader should believe. Give an exception one sentence and move its detail to an appendix. If a check weakens a story, fix or extend the analysis before hedging or dropping it.
 - **Compare like with like.** Numbers from different datasets or people get their own sentence or table. Never set them side by side as if one caused the other.
-- **Figures:** the title states the finding; the caption says how to read it.
+- **No dead ink.** Every sentence, table row and column, figure panel, legend entry and caption clause must change what the reader believes or how they read something. Cut the rest.
+- **Say each thing once.** A number lives in a table or in the text, not both; in the main text or the appendix, not both. A finding is stated in full once; the introduction and summary point to it in a few words.
+- **Figures:** each panel makes one point the text cannot make as well (a shape, a distribution, a comparison at a glance). The title states the finding; the caption says how to read it and does not repeat the methods.
 
 ## Before you hand it over
 
