@@ -5,7 +5,7 @@ Dan Ofer's writing and research skills for Claude Code, Codex and other agents t
 | Skill | What it does | How it starts |
 |---|---|---|
 | `plain-words` | Rewrites text in everyday or standard terms, one idea per sentence | Automatically, on any text a person will read |
-| `writing-for-readers` | Puts the finding first and gives every number a comparison | Automatically, on any text a person will read |
+| `writing-for-readers` | Puts the finding first and gives every number a comparison; `references/editing-pass.md` runs an editing or cleanup pass, `references/paper.md` adds paper rules | Automatically, on any text a person will read or an editing pass |
 | `results-page` | Builds one results page from finished analyses, for a reader new to the project | Only when you type `/results-page` (in Claude Code) |
 | `academic-rebuttal` | Triages peer reviews, ranks experiments, then drafts the rebuttal | Automatically, when you share reviews |
 | `codex-workers` | Claude plans and integrates; Codex workers (official Codex plugin) do the reading, debugging and edits | Only `/codex-workers <task>` (Claude Code only) |
@@ -27,6 +27,17 @@ Without `/storage`, copy a skill folder into one of those two folders; `hybrid` 
 ## Edit
 
 Each skill is one folder with a `SKILL.md`. Keep it short: an agent reads the `description` line in every session and the rest only when the skill starts. Commit each change here.
+
+## Prose-lint hook (Claude Code)
+
+`skills/writing-for-readers/scripts/prose_lint.py` checks the text an agent just wrote to a `.md`, `.tex`, `.rst` or `.txt` file: em dashes, hedges and filler, content warnings, process notes, defensive setups, sentences over 45 words, and the project's own rejected words from the nearest `.claude/rejected-words.txt` (one word or phrase per line, optionally `phrase -> use instead`). It never blocks; hits go back to the agent. Agent instruction files (CLAUDE.md, AGENTS.md, SKILL.md, memory, `.claude/`) are skipped, and a `.claude/prose-lint-off` file turns it off for a project. To enable it, add to `~/.claude/settings.json`:
+
+```json
+"hooks": {"PostToolUse": [{"matcher": "Edit|Write|MultiEdit", "hooks": [{"type": "command",
+  "command": "python3 -I \"$HOME/.claude/skills/writing-for-readers/scripts/prose_lint.py\" 2>/dev/null || true", "timeout": 10}]}]}
+```
+
+`scripts/check_edit.py OLD NEW [--reject words.txt]` compares two built texts for an editing pass: lost and new numbers, long sentences, doubled words, `??` references and rejected words.
 
 ## Codex skills
 
