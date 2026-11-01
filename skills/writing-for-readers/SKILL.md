@@ -14,7 +14,7 @@ Your reader wasn't there. They know the field, not your project, and they skim. 
 
 - **Lead with the finding:** what happened, and how big. Headline the new idea or ability; a comparison leads only when it is the contribution. Open on the problem only if an introduction is needed; never a generic one. Don't narrate project history or a log of what was run.
 - **Headings state the claim** in a report ("Edgier answers win more", not "Selection analysis"); a long report opens with a numbered list of findings.
-- **Summaries and tl;drs** stay high level: findings in words, only the numbers that size a claim, nulls in words, why each matters. Match the length asked for. End on a plain claim the reader will remember.
+- **Summaries and tl;drs** stay high level: findings in words, the number a reader would quote, nulls in words, why each matters. Match the length asked for. End on a plain claim the reader will remember.
 - **Emails and handoffs** are a short decision list: what to do, how hard each fix is, which option needs least manual work.
 - **The main text stands alone.** Define every term and comparator where it first appears there, never first in an appendix. A long report ends with a short glossary.
 
