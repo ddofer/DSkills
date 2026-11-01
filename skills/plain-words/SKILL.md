@@ -25,6 +25,8 @@ Write for a smart colleague who wasn't in the project. Use words they already kn
 - **Defensive setups.** Start with the action: "To check that X does not carry Y, we added Z" becomes "We added Z". Cut asides that answer an objection nobody raised ("so this cell is not a test"). Keep the purpose of a control when the reader needs it to read the result.
 - **Announce, then say.** "Removing them is expected to lower the estimate. It lowers it to 1.2" becomes "Removing them lowers the estimate to 1.2". Same for colon reveals ("The key finding is clear: …") and "notably", "importantly", "crucially".
 - **Slogans and fragments:** "Same data. Different questions." Write a plain sentence.
+- **Rhythm standing in for content.** A contrast nobody raised ("not X, but Y" when no one claimed X), a list padded to three, a rhetorical question before the answer, a paragraph opened with "Moreover", "Furthermore", "Overall" or "In conclusion". Each sounds like an argument without adding one. Say the claim; let the order of sentences carry the connection.
+- **Buzzwords where an ordinary word exists:** "leverage", "robust", "nuanced", "landscape", "delve", "showcase", "key" as an adjective. Use the ordinary word or the measured quantity.
 - **Orphaned "also", "further", "another"** left after an edit removed what they pointed back to.
 - **Em dashes in prose.** Use a comma or a new sentence.
 

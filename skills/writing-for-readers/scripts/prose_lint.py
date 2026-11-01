@@ -21,6 +21,8 @@ SLOP = [
     (r'\b(?:pre-?regist\w*|set in advance|chosen after seeing|exploratory analys\w*)\b', 'process note'),
     (r'\bto check that\b', 'defensive setup: start with the action'),
     (r'\bis expected to\b', 'announce-then-say'),
+    (r'\b(?:delve|leverag\w*|showcas\w*|nuanced|robust)\b', 'buzzword: use the ordinary word or the measured quantity'),
+    (r'^\s*(?:Moreover|Furthermore|Additionally|Overall|In conclusion)\b', 'transition standing in for content: drop it'),
 ]
 MAX_WORDS = 45
 
@@ -72,7 +74,7 @@ def main():
     if '\u2014' in raw or (tex and re.search(r'(?<!-)---(?!-)', raw)):
         hits.append('em dash in prose: use a comma or a new sentence')
     for pat, why in SLOP:
-        for m in re.finditer(pat, text, re.I):
+        for m in re.finditer(pat, text, re.I | re.M):
             hits.append(f'"{m.group()}": {why}')
     words = project_file(path, 'rejected-words.txt')
     if words:
