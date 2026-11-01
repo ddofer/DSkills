@@ -29,6 +29,8 @@ Write for a smart colleague who wasn't in the project. Use words they already kn
 - **Buzzwords where an ordinary word exists:** "leverage", "robust", "nuanced", "landscape", "delve", "showcase". Use the ordinary word or the measured quantity.
 - **Orphaned "also", "further", "another"** left after an edit removed what they pointed back to.
 - **Em dashes in prose.** Use a comma or a new sentence.
+- **Run-in bold heads** ("**Finding.** text") in papers and reports, and **staccato**: runs of short punchy sentences. Write a topic sentence; join sentences that make one argument.
+- **Reflexive "not only X" / "X, not Y".** State the central contrast once; elsewhere just say the claim.
 
 ## Cut
 

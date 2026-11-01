@@ -71,6 +71,10 @@ def main():
     tex = path.suffix == '.tex'
     text = plain(raw, tex)
     hits = []
+    if (tex and re.search(r'\\paragraph\{|^\s*(?:\\item\s*)?\\textbf\{[^}]*\.\}', raw, re.M)) or re.search(r'^\s*(?:[-*]\s+|\d+\.\s+)?\*\*[^*\n]+[.:]\*\*\s+\S', raw, re.M):
+        hits.append('run-in bold head ("**X.** text"): an LLM tell; use a heading or a topic sentence')
+    if len(re.findall(r'\bnot only\b', text, re.I)) > 1:
+        hits.append('repeated "not only": state the contrast once')
     if '\u2014' in raw or (tex and re.search(r'(?<!-)---(?!-)', raw)):
         hits.append('em dash in prose: use a comma or a new sentence')
     for pat, why in SLOP:
