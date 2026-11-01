@@ -30,7 +30,7 @@ Your reader wasn't there. They know the field, not your project, and they skim. 
 - **Don't sabotage the finding.** Add no contrast nobody asked for unless it changes what the reader should believe. If a check weakens a story, propose fixing or extending the analysis before hedging or dropping it; don't change the analysis yourself.
 - **One story.** Drop side stories. Secondary checks and exceptions get one main-text sentence; their detail goes to an appendix.
 - **Compare like with like.** Numbers from different datasets or people get their own sentence or table. Never set them side by side as if one caused the other.
-- **Everything must justify itself.** Every word, sentence, paragraph, list item, section, table column, figure panel and caption clause must change what the reader believes or how they read something. Ask of each: what would the reader lose without it? If nothing, cut it; don't compress it. Less is more.
+- **Everything must justify itself.** Every word, sentence, paragraph, list item, section, table column, figure panel and caption clause must change what the reader believes or how they read something. Ask of each: what would the reader lose without it? If nothing, cut it; don't compress it.
 - **Say each thing once.** A number lives in a table or the text, not both; in the main text or the appendix, not both. A finding is stated in full once; the abstract, introduction and summary repeat only its key number.
 - **Add nothing that isn't in the sources.** Never invent a citation or a result; leave a marked placeholder for the author.
 

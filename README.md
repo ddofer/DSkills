@@ -30,7 +30,7 @@ Each skill is one folder with a `SKILL.md`. Keep it short: an agent reads the `d
 
 ## Prose-lint hook (Claude Code)
 
-`skills/writing-for-readers/scripts/prose_lint.py` checks the text an agent just wrote to a `.md`, `.tex`, `.rst` or `.txt` file: em dashes, hedges and filler, content warnings, process notes, defensive setups, sentences over 45 words, and the project's own rejected words from the nearest `.claude/rejected-words.txt` (one word or phrase per line, optionally `phrase -> use instead`). It never blocks; hits go back to the agent. Agent instruction files (CLAUDE.md, AGENTS.md, SKILL.md, memory, `.claude/`) are skipped, and a `.claude/prose-lint-off` file turns it off for a project. To enable it, add to `~/.claude/settings.json`:
+`skills/writing-for-readers/scripts/prose_lint.py` checks the text an agent just wrote to a `.md`, `.tex`, `.rst` or `.txt` file: em dashes, hedges and filler, buzzwords, paragraph-opening transitions, content warnings, process notes, defensive setups, sentences over 45 words, and the project's own rejected words from the nearest `.claude/rejected-words.txt` (one word or phrase per line, optionally `phrase -> use instead`). It never blocks; hits go back to the agent. Agent instruction files (CLAUDE.md, AGENTS.md, SKILL.md, memory, `.claude/`) are skipped, and a `.claude/prose-lint-off` file turns it off for a project. To enable it, add to `~/.claude/settings.json`:
 
 ```json
 "hooks": {"PostToolUse": [{"matcher": "Edit|Write|MultiEdit", "hooks": [{"type": "command",
