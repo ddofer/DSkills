@@ -7,6 +7,8 @@ Writing, paper-review and Codex skills for Claude Code, Codex and other agents t
 | `plain-words` | Rewrites text in everyday or standard terms, one idea per sentence, without hedges or AI-sounding filler | On its own, for any text a person will read |
 | `writing-for-readers` | Decides what a piece says and in what order: the finding first, every number with a comparison. Has an editing-pass guide and paper rules | On its own, for any text a person will read, or an editing pass |
 | `academic-rebuttal` | Triages peer reviews, says whether to rebut or resubmit, ranks the experiments worth running, then drafts or checks the rebuttal | On its own, when you share reviews |
+| `sit` | Systematic Inventive Thinking: changes the shape of the existing system first, then asks what the change is good for. For new ideas and stuck problems | `/sit <goal or obstacle>` |
+| `idea-audit` | Finds the doubt that decides whether an idea is worth pursuing, and the cheapest check that settles it | `/idea-audit <idea>` |
 | `skim-review` | Final check of a paper: finds strong findings that fell out of the text, and findings a skimming reviewer would miss. Ends with a ready-or-not verdict | `/skim-review <paper> [--full]` |
 | `results-page` | Builds one self-contained results page from finished analyses, for a reader who decides from that page alone | `/results-page` (in Codex, ask for it by name) |
 | `codex-workers` | Claude plans and integrates; Codex does the reading, debugging and edits | `/codex-workers [--write] <task>` (Claude Code only) |
@@ -22,7 +24,7 @@ DSkills/link.sh
 
 `link.sh` links each skill into `~/.claude/skills` (Claude Code) and `~/.agents/skills` (Codex and most other agents). It skips a real folder of the same name but replaces a symlink of that name. Rerunning never removes links it made before. A `git pull` then updates every linked skill. Start a new agent session to load them.
 
-To install one skill, copy its folder into `~/.claude/skills` or `~/.agents/skills`. Some skills point to others: copy `plain-words` and `writing-for-readers` together, `results-page` with both, and `council` or `hybrid` with `codex-workers`.
+Skills marked with a `/` command start only when you type it (in Codex, `$name` instead of `/name`; `agents/openai.yaml` in each of those folders enforces it). To install one skill, copy its folder into `~/.claude/skills` or `~/.agents/skills`. Some skills point to others: copy `plain-words` and `writing-for-readers` together, `results-page` with both, and `council` or `hybrid` with `codex-workers`.
 
 ## Codex skills: what to know
 
