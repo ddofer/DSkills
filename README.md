@@ -6,6 +6,7 @@ Skills for Claude Code, Codex and other agents that read the [Agent Skills](http
 |---|---|---|
 | `plain-words` | Everyday or standard words, one idea per sentence, no hedges or AI filler | On any text a person will read |
 | `writing-for-readers` | What to say and in what order: the finding first, every number with a comparison. Includes an editing-pass guide and paper rules | On any text a person will read |
+| `native-voice` | Rewrites stiff, machine-sounding sentences the way a fluent native researcher would; shortens headings, captions and figure labels | On drafts an LLM wrote, or text called wordy or AI-sounding |
 | `academic-rebuttal` | Triages peer reviews, says whether to rebut or resubmit, ranks the experiments, then drafts or checks the rebuttal | When you share reviews |
 | `sit` | Systematic Inventive Thinking: change the structure of what you have first, then ask what the change is good for | When you ask to brainstorm or invent, or `/sit <goal or trade-off>` |
 | `idea-audit` | The doubt that decides whether an idea is worth pursuing, and the cheapest check that settles it | `/idea-audit <idea>` |
