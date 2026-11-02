@@ -20,7 +20,7 @@ SLOP = [
     (r'\b(?:content warning|trigger warning)\b', 'content warning'),
     (r'\bto check that\b', 'defensive setup: start with the action'),
     (r'\bis expected to\b', 'announce-then-say'),
-    (r'\b(?:delve|leverag\w*|showcas\w*|nuanced)\b', 'buzzword: use the ordinary word or the measured quantity'),
+    (r'\b(?:delv\w*|leverag\w*|showcas\w*|nuanced)\b', 'buzzword: use the ordinary word or the measured quantity'),
     (r'^\s*(?:Moreover|Furthermore|Additionally|Overall|In conclusion),', 'transition standing in for content: drop it'),
 ]
 MAX_WORDS = 40
