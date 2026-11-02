@@ -1,6 +1,6 @@
 ---
 name: skim-review
-description: Final check of a paper or report: finds strong findings that fell out of the text over rounds of editing, and findings a skimming reviewer would miss. Manual only; start with /skim-review <paper path> [--full].
+description: Final check of a paper or report. Finds strong findings that fell out of the text over rounds of editing, and findings a skimming reviewer would miss. Manual only; start with /skim-review <paper path> [--full].
 disable-model-invocation: true
 argument-hint: "<paper or report path> [--full]"
 ---
