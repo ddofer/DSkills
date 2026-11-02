@@ -1,6 +1,6 @@
 ---
 name: academic-rebuttal
-description: Plans and writes academic rebuttals and responses to reviewers in two stages: triage the reviews and rank the experiments worth running, then draft the response once results are in. Use when the user shares peer reviews, reviewer scores or a rebuttal deadline, asks whether to rebut or resubmit, or wants a rebuttal or response letter drafted or checked.
+description: Plans and writes academic rebuttals and responses to reviewers in two stages. First it triages the reviews and ranks the experiments worth running; then it drafts the response once results are in. Use when the user shares peer reviews, reviewer scores or a rebuttal deadline, asks whether to rebut or resubmit, or wants a rebuttal or response letter drafted or checked.
 ---
 
 # Academic rebuttal
