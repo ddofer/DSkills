@@ -7,13 +7,13 @@ Skills for Claude Code, Codex and other agents that read the [Agent Skills](http
 | `plain-words` | Everyday or standard words, one idea per sentence, no hedges or AI filler | On any text a person will read |
 | `writing-for-readers` | What to say and in what order: the finding first, every number with a comparison. Includes an editing-pass guide and paper rules | On any text a person will read |
 | `academic-rebuttal` | Triages peer reviews, says whether to rebut or resubmit, ranks the experiments, then drafts or checks the rebuttal | When you share reviews |
-| `sit` | Systematic Inventive Thinking: change the shape of the existing system first, then ask what the change is good for | When you ask to brainstorm or invent, or `/sit <goal or trade-off>` |
+| `sit` | Systematic Inventive Thinking: change the structure of what you have first, then ask what the change is good for | When you ask to brainstorm or invent, or `/sit <goal or trade-off>` |
 | `idea-audit` | The doubt that decides whether an idea is worth pursuing, and the cheapest check that settles it | `/idea-audit <idea>` |
 | `skim-review` | Finds strong findings that fell out of a paper, or that a skimming reviewer would miss. Ends with a ready-or-not verdict | `/skim-review <paper> [--full]` |
 | `results-page` | One self-contained results page from finished analyses | `/results-page` |
 | `codex-workers` | Claude plans and integrates; Codex reads, debugs and edits | `/codex-workers [--write] <task>` |
-| `council` | A Codex view next to Claude's: second opinion, critique, blind attempts, judge | `/council <question>` |
-| `hybrid` | A Claude Code Workflow with Codex agents as some of its stages | `/hybrid <task>` |
+| `council` | A Codex view next to Claude's: a second opinion, a critique, two independent attempts, or a judge | `/council <question>` |
+| `hybrid` | A run of Claude Code's Workflow tool in which some stages are Codex agents | `/hybrid <task>` |
 
 A skill that starts with `/` runs only when you type it. In Codex, type `$name`.
 
