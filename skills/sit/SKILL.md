@@ -1,6 +1,6 @@
 ---
 name: sit
-description: Systematic Inventive Thinking for new ideas and stuck problems. Changes the structure of the existing system first, then asks what the change is good for. Use when the user asks to brainstorm, think creatively or deeply, find a better approach, get past a trade-off or bottleneck, or wants ideas that are not the obvious ones. Also /sit <goal, problem or trade-off>.
+description: Systematic Inventive Thinking for new ideas and stuck problems. Changes the structure of the existing system first, then asks what the change is good for. Use when the user asks to brainstorm or invent, or is stuck on a trade-off. Also /sit <goal, problem or trade-off>.
 argument-hint: "<what to invent, or the obstacle or trade-off to get past>"
 ---
 
