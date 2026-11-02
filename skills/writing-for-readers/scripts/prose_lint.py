@@ -17,14 +17,13 @@ SKIP_PARTS = {'.claude', 'memory', 'node_modules', '.venv', '.git', 'skills'}
 SLOP = [
     (r'\b(?:it seems(?: possible)?|to our knowledge|arguably|it is worth noting|interestingly|notably|importantly|crucially)\b', 'hedge or filler'),
     (r'\b(?:slightly|somewhat)\b', 'hedge: give the number instead'),
-    (r'\b(?:content warning|trigger warning|quotes offensive|this paper quotes|offensive by design)\b', 'content warning'),
-    (r'\b(?:pre-?regist\w*|set in advance|chosen after seeing|exploratory analys\w*)\b', 'process note'),
+    (r'\b(?:content warning|trigger warning)\b', 'content warning'),
     (r'\bto check that\b', 'defensive setup: start with the action'),
     (r'\bis expected to\b', 'announce-then-say'),
     (r'\b(?:delve|leverag\w*|showcas\w*|nuanced)\b', 'buzzword: use the ordinary word or the measured quantity'),
     (r'^\s*(?:Moreover|Furthermore|Additionally|Overall|In conclusion),', 'transition standing in for content: drop it'),
 ]
-MAX_WORDS = 45
+MAX_WORDS = 40
 
 
 def new_text(inp):

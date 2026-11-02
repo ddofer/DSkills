@@ -1,6 +1,6 @@
 # Resubmission plan
 
-Use when rebuttal has low expected return or the author asks for it. Frame resubmission as the higher-return path, not as failure.
+Use when rebuttal has low expected return or the author asks for it. Present resubmission as the higher-return path.
 
 1. **Why it was rejected.** Name the main mechanism: unclear contribution, too little evidence, a technical flaw, unfair evaluation, weak novelty positioning, wrong venue audience, overclaiming, poor writing, or several independent concerns with no advocate.
 2. **What is still worth answering now** (factual errors), and what not to spend time on.

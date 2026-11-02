@@ -5,7 +5,7 @@ disable-model-invocation: true
 argument-hint: "<question, decision, draft or diff to deliberate>"
 ---
 
-Two models with different training see different things. Use that where the answer is uncertain, contested or costly to get wrong, and nowhere else. The council is a step, not a mode: pick the smallest form that resolves the question, then decide in Claude and say why.
+A second model trained differently catches different mistakes. Use it only where the answer is uncertain, contested or costly to get wrong. Pick the smallest form that settles the question, then decide in Claude and say why.
 
 Question: $ARGUMENTS
 

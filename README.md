@@ -1,51 +1,61 @@
-# Agent skills
+# DSkills
 
-Dan Ofer's writing and research skills for Claude Code, Codex and other agents that read the [Agent Skills](https://agentskills.io) format.
+Writing, paper-review and Codex skills for Claude Code, Codex and other agents that read the [Agent Skills](https://agentskills.io) format. By Dan Ofer.
 
 | Skill | What it does | How it starts |
 |---|---|---|
-| `plain-words` | Rewrites text in everyday or standard terms, one idea per sentence | Automatically, on any text a person will read |
-| `writing-for-readers` | Puts the finding first and gives every number a comparison; `references/editing-pass.md` runs an editing or cleanup pass, `references/paper.md` adds paper rules | Automatically, on any text a person will read or an editing pass |
-| `results-page` | Builds one results page from finished analyses, for a reader new to the project | Only when you type `/results-page` (in Claude Code) |
-| `academic-rebuttal` | Triages peer reviews, ranks experiments, then drafts the rebuttal | Automatically, when you share reviews |
-| `codex-workers` | Claude plans and integrates; Codex workers (official Codex plugin) do the reading, debugging and edits | Only `/codex-workers <task>` (Claude Code only) |
-| `hybrid` | Claude Code's native Workflow orchestration with Codex agents as stages next to Claude agents | Only `/hybrid <task>` (Claude Code only) |
-| `council` | A Codex perspective next to Claude's: second opinion, critique, independent attempts, judge | Only `/council <question>` (Claude Code only) |
+| `plain-words` | Rewrites text in everyday or standard terms, one idea per sentence, without hedges or AI-sounding filler | On its own, for any text a person will read |
+| `writing-for-readers` | Decides what a piece says and in what order: the finding first, every number with a comparison. Has an editing-pass guide and paper rules | On its own, for any text a person will read, or an editing pass |
+| `academic-rebuttal` | Triages peer reviews, says whether to rebut or resubmit, ranks the experiments worth running, then drafts or checks the rebuttal | On its own, when you share reviews |
+| `results-page` | Builds one self-contained results page from finished analyses, for a reader who decides from that page alone | `/results-page` (in Codex, ask for it by name) |
+| `codex-workers` | Claude plans and integrates; Codex does the reading, debugging and edits | `/codex-workers [--write] <task>` (Claude Code only) |
+| `council` | Adds a Codex view next to Claude's: a second opinion, a critique, two blind attempts, or a judge | `/council <question>` (Claude Code only) |
+| `hybrid` | Runs a Claude Code Workflow in which some stages are Codex agents and the rest are Claude agents | `/hybrid <task>` (Claude Code only) |
 
 ## Install
 
-On a machine that mounts `/storage`, link the skills into your own home folder:
-
 ```bash
-/storage/users/ddofer/agent-skills/link.sh
+git clone https://github.com/ddofer/DSkills
+DSkills/link.sh
 ```
 
-This links each skill into `~/.claude/skills` (Claude Code) and `~/.agents/skills` (Codex and most other agents). It never replaces a real folder: if you already have your own copy of a skill, move it aside and rerun. Edits here then reach every linked machine and user at once. Start a new agent session to pick them up.
+`link.sh` links each skill into `~/.claude/skills` (Claude Code) and `~/.agents/skills` (Codex and most other agents). It skips a real folder of the same name but replaces a symlink of that name. Rerunning never removes links it made before. A `git pull` then updates every linked skill. Start a new agent session to load them.
 
-Without `/storage`, copy a skill folder into one of those two folders; `hybrid` and `council` also need `codex-workers`, whose reference file they read.
+To install one skill, copy its folder into `~/.claude/skills` or `~/.agents/skills`. Some skills point to others: copy `plain-words` and `writing-for-readers` together, `results-page` with both, and `council` or `hybrid` with `codex-workers`.
 
-## Edit
+## Codex skills: what to know
 
-Each skill is one folder with a `SKILL.md`. Keep it short: an agent reads the `description` line in every session and the rest only when the skill starts. Commit each change here.
+`codex-workers`, `council` and `hybrid` run Codex from inside Claude Code.
 
-## Prose-lint hook (Claude Code)
+- They need the official Codex plugin and a logged-in Codex CLI. In Claude Code: `/plugin marketplace add openai/codex-plugin-cc`, `/plugin install codex@openai-codex`, then `/codex:setup`.
+- They work only in Claude Code, so `link.sh` does not link them into `~/.agents/skills`.
+- `hybrid` needs Claude Code's Workflow tool. If your build lacks it, use `/codex-workers` instead.
+- Each Codex turn uses about 30k Codex tokens before it starts on the task. Give each worker one real task.
+- Codex agents started from a workflow can edit files by default. Say "read-only" in the prompt unless the stage should edit.
+- They start only when you type them, so they cost no context until then.
 
-`skills/writing-for-readers/scripts/prose_lint.py` checks the text an agent just wrote to a `.md`, `.tex`, `.rst` or `.txt` file: em dashes, hedges and filler, buzzwords, paragraph-opening transitions, content warnings, process notes, defensive setups, sentences over 45 words, and the project's own rejected words from the nearest `.claude/rejected-words.txt` (one word or phrase per line, optionally `phrase -> use instead`). It never blocks; hits go back to the agent. Agent instruction files (CLAUDE.md, AGENTS.md, SKILL.md, memory, `.claude/`) are skipped, and a `.claude/prose-lint-off` file turns it off for a project. To enable it, add to `~/.claude/settings.json`:
+Examples:
+
+```
+/codex-workers find why tests/test_parser.py fails and fix it with the smallest patch
+/council is the speedup claimed in the README supported by the benchmark script?
+/hybrid audit src/ for unchecked file reads and propose a fix for each
+```
+
+## Prose lint (Claude Code hook)
+
+`writing-for-readers/scripts/prose_lint.py` checks text an agent writes to a `.md`, `.tex`, `.rst` or `.txt` file.
+
+- It flags em dashes, hedges, buzzwords, sentences over 40 words and similar habits. It never blocks; it tells the agent what it found.
+- It skips `CLAUDE.md`, `AGENTS.md`, `SKILL.md`, `MEMORY.md` and anything under a folder named `.claude`, `memory`, `skills`, `.git`, `.venv` or `node_modules`.
+- A project can list its own banned words in `.claude/rejected-words.txt`, one per line, optionally `phrase -> use instead`.
+- An empty `.claude/prose-lint-off` file turns it off for a project.
+
+To turn it on, merge this into the `hooks` key of `~/.claude/settings.json`:
 
 ```json
 "hooks": {"PostToolUse": [{"matcher": "Edit|Write|MultiEdit", "hooks": [{"type": "command",
   "command": "python3 -I \"$HOME/.claude/skills/writing-for-readers/scripts/prose_lint.py\" 2>/dev/null || true", "timeout": 10}]}]}
 ```
 
-`scripts/check_edit.py OLD NEW [--reject words.txt]` compares two built texts for an editing pass: lost and new numbers, long sentences, doubled words, `??` references and rejected words.
-
-## Codex skills
-
-`codex-workers`, `hybrid` and `council` need the official Codex plugin in Claude Code (`/plugin marketplace add openai/codex-plugin-cc`, `/plugin install codex@openai-codex`, then `/codex:setup`) and a logged-in Codex CLI. They are manual-only (`disable-model-invocation: true`), so they cost no context until typed. The call recipe they share is `skills/codex-workers/references/codex-calls.md`. Examples:
-
-```
-/codex-workers find why plm/tests/hf/test_vocab_row_init.py fails and fix it with the smallest patch
-/hybrid audit plm/hf/ for places that read CANON_TOKEN_IDS and propose a fix per site
-/council is the PTM-aware LLR correction (claim B16) stated correctly in paper/main.tex?
-```
-
+`writing-for-readers/scripts/check_edit.py OLD NEW [--reject words.txt]` compares a document's text before and after an edit. It lists lost and new numbers, long sentences, doubled words and broken `??` references.

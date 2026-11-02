@@ -4,7 +4,7 @@ description: Builds one self-contained results page from finished, verified anal
 disable-model-invocation: true
 ---
 
-The reader is **cold**: they know the field, not the project, and decide from this page alone. Every step serves them.
+The reader is **cold**: they know the field, not the project, and decide from this page alone.
 
 ## Steps
 
@@ -39,6 +39,6 @@ The reader is **cold**: they know the field, not the project, and decide from th
 
 ## Rules
 
-- Define each term, acronym, model and dataset in plain words where it first appears, including in the opening box, which comes before the definitions.
+- Define each term, acronym, model and dataset in plain words where it first appears, including in the bottom line, which comes before the definitions.
 - Say plainly when the main hypothesis failed.
 - Prose follows `writing-for-readers` and `plain-words`; figures follow `tufte-data-viz` if it is installed.

@@ -24,7 +24,7 @@ An editing, proofreading or cleanup pass on an existing paper, report, page or s
 2. **Readers propose exact replacements:** an `old` string copied verbatim from the source file, a `new` string, and one line on why. A cut names the duplicate or reason.
 3. **One editor per file merges.** Combine overlapping proposals. Reject any that deletes a finding, changes a number, removes a definition the text still needs, adds a hedge, or undoes a do-not-touch item.
 4. **Integrate.** Save the current built text first (for example `pdftotext main.pdf old.txt`). Apply the accepted replacements, regenerate figures and tables from their scripts, rebuild.
-5. **Check.** Run `python3 ../scripts/check_edit.py old.txt new.txt [--reject words.txt]` (the script sits in this skill's `scripts/` folder) on the built text before and after. The rejected-word list is the project's `.claude/rejected-words.txt`, if it keeps one. Check venue limits (abstract words, pages). Look at every figure at the size it will be read (paper column, page width) for clipped or overlapping labels and illegible text.
+5. **Check.** Run `python3 <this skill's folder>/scripts/check_edit.py old.txt new.txt [--reject words.txt]` on the built text before and after. The rejected-word list is the project's `.claude/rejected-words.txt`, if it keeps one. Check venue limits (abstract words, pages). Look at every figure at the size it will be read (paper column, page width) for clipped or overlapping labels and illegible text.
 6. **Report** the changes by file, the material corrections, and anything left for the author.
 
 ## Done when

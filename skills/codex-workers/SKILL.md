@@ -5,7 +5,7 @@ disable-model-invocation: true
 argument-hint: "[--write] <what to get done>"
 ---
 
-Claude keeps the plan, the decisions and the integration. Codex does the long reading, the debugging and the edits in its own session, and returns a short result. The point is to spend Claude tokens on judgment, not on scanning files. Quality comes first: if a step needs Claude's context, do it in Claude.
+Claude keeps the plan, the decisions and the integration. Codex does the long reading, the debugging and the edits in its own session, and returns a short result. If a step needs Claude's context, do it in Claude.
 
 Task: $ARGUMENTS
 

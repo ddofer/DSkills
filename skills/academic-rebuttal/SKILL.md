@@ -1,11 +1,11 @@
 ---
 name: academic-rebuttal
-description: Plans and writes academic rebuttals and responses to reviewers in two stages — triage the reviews and rank the experiments worth running, then draft the response once results are in. Use when the user shares peer reviews, reviewer scores or a rebuttal deadline, asks whether to rebut or resubmit, or wants a rebuttal or response letter drafted or checked.
+description: Plans and writes academic rebuttals and responses to reviewers in two stages: triage the reviews and rank the experiments worth running, then draft the response once results are in. Use when the user shares peer reviews, reviewer scores or a rebuttal deadline, asks whether to rebut or resubmit, or wants a rebuttal or response letter drafted or checked.
 ---
 
 # Academic rebuttal
 
-The goal is not to answer every sentence. It is to resolve the few doubts that decide acceptance, within the time left.
+Resolve the few doubts that decide acceptance, within the time left. Don't answer every sentence.
 
 **Two stages.** Stage 1 triages and plans. Stage 2 drafts, once the author supplies results or confirms no new experiment will run. Results may arrive piecemeal: integrate what is done, mark what failed or is partial, and say whether more experiments are worth the time left. If the author asks for a draft from existing evidence only, write it and mark every unsupported claim. To check an existing draft, apply Stage 2's rules to it and list what fails.
 

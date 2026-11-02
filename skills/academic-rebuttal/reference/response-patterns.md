@@ -12,7 +12,7 @@ For a critical review set:
 
 ## Major response
 
-> **C1. Performance under matched compute — R1, R3**
+> **C1. Performance under matched compute (R1, R3)**
 >
 > **Concern.** [Faithful one-sentence paraphrase.]
 >

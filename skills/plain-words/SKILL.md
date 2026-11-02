@@ -10,13 +10,13 @@ Write for a smart colleague who wasn't in the project. Use words they already kn
 ## Rules
 
 - **One idea per sentence.** Judge by meaning, not punctuation. Split where the reader would have to hold two claims at once; keep a tight pair together ("X rises while Y stays flat"). Prefer the active voice: "we compared", "users finish".
-- **No telescoping.** Don't make the reader hold a growing chain of qualifiers before the point arrives: noun and hyphen stacks ("a past-win-rate-plus-text recommender"), "which… where… that…" chains, brackets inside or beside brackets. Name the thing, then say what happened to it. Give each qualifier its own sentence, or drop it if the reader doesn't need it.
+- **No telescoping.** Don't make the reader hold a growing chain of qualifiers before the point arrives: noun and hyphen stacks ("a click-history-plus-text ranking model"), "which… where… that…" chains, brackets inside or beside brackets. Name the thing, then say what happened to it. Give each qualifier its own sentence, or drop it if the reader doesn't need it.
   - Before: "The redesigned flow's Q3 mobile returning-user median checkout time fell 12%."
   - After: "We looked at returning customers on phones, July to September. With the new checkout, half of them finished in a time 12% shorter than before."
 - **Say it the ordinary way.** Use what someone outside the project would call it, or the field's standard term ("odds ratio", "95% interval"), never one you invented. Name a method or baseline by what it is, not by a nickname.
 - **No metaphor standing in for a measurement:** "raises the odds", not "pays", "lifts" or "flattens", unless that word is the measured quantity.
 - **Match the word to what was measured.** A broader word overstates ("grows" for "concentrates"). Say "significant" or "passes correction" only when the analysis computed it.
-- **Shorter when just as clear:** "edgier answers win more", not "a positive association between transgression intensity and selection probability"; "use", not "utilize".
+- **Shorter when just as clear:** "cheaper plans sell more", not "a negative association between price point and conversion probability"; "use", not "utilize".
 - **One name per thing, everywhere:** text, tables, figure labels and captions. Three names read as three things. When two measures cover one idea, give each its own name every time. The same estimate has the same value everywhere.
 
 ## AI slop
@@ -34,7 +34,7 @@ Write for a smart colleague who wasn't in the project. Use words they already kn
 
 ## Cut
 
-- **Coined labels** ("the dial", "end fifths", "main set"). Replace each with what it measures.
+- **Coined labels** ("the dial", "bucket B", "the clean set"). Replace each with what it measures.
 - **Text only the writer needs:** file names, variables, job ids, internal section labels, notes for the next agent, provenance bookkeeping. Move sources to a sources list; delete the rest.
 - **Pet terms, found by counting.** In a long piece, list the most frequent 1–3-word phrases (lowercase, plurals folded, stop words dropped). Rename each one a reader in the field wouldn't use, everywhere at once.
 - **Labels seeded by notes.** Project notes, memory and glossaries spread coined labels into later writing. When you replace one, fix it at the source too, and list the old name as one to avoid.
