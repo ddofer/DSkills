@@ -7,7 +7,7 @@ Writing, paper-review and Codex skills for Claude Code, Codex and other agents t
 | `plain-words` | Rewrites text in everyday or standard terms, one idea per sentence, without hedges or AI-sounding filler | On its own, for any text a person will read |
 | `writing-for-readers` | Decides what a piece says and in what order: the finding first, every number with a comparison. Has an editing-pass guide and paper rules | On its own, for any text a person will read, or an editing pass |
 | `academic-rebuttal` | Triages peer reviews, says whether to rebut or resubmit, ranks the experiments worth running, then drafts or checks the rebuttal | On its own, when you share reviews |
-| `sit` | Systematic Inventive Thinking: changes the shape of the existing system first, then asks what the change is good for. For new ideas and stuck problems | `/sit <goal or obstacle>` |
+| `sit` | Systematic Inventive Thinking: changes the shape of the existing system first, then asks what the change is good for. For new ideas and stuck problems | On its own, when you ask to brainstorm or think creatively, or `/sit <goal or obstacle>` |
 | `idea-audit` | Finds the doubt that decides whether an idea is worth pursuing, and the cheapest check that settles it | `/idea-audit <idea>` |
 | `skim-review` | Final check of a paper: finds strong findings that fell out of the text, and findings a skimming reviewer would miss. Ends with a ready-or-not verdict | `/skim-review <paper> [--full]` |
 | `results-page` | Builds one self-contained results page from finished analyses, for a reader who decides from that page alone | `/results-page` (in Codex, ask for it by name) |
