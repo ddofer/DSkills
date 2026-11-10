@@ -21,7 +21,7 @@ Target: $ARGUMENTS
 3. **Full read.** From the whole paper: every finding it states, with its number.
 4. **Compare** the three lists in Claude:
    - in 1, not in 3: **lost**. Report it with its source. Add it only if the number is in the results; never from memory.
-   - in 3, not in 2: **buried**. Move it to where a skimmer looks: a heading that states the claim, the caption's first sentence, the abstract, the first or last paragraph of its section.
+   - in 3, not in 2: **buried**. Move it to where a skimmer looks: the abstract, the contributions, the first or last paragraph of its section. In a report, also a heading that states the claim and the caption's first sentence; in a paper, headings stay short nouns and captions say what is shown (`writing-for-readers/references/paper.md`).
    - in 2, not in 3 or 1: **unsupported**. The skim view promises what the text does not deliver. Narrow it.
    - reasons to accept unclear from 2: rewrite the abstract's last sentence, the introduction's contributions, or the conclusion so they carry them.
 5. **Edit.** Propose each change as an exact `old` → `new` replacement with one line on why. Apply them if the user asked for edits; otherwise report them. Change no number. A lost finding that needs a new number goes to the author as a question, not into the text.

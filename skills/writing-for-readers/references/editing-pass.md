@@ -1,6 +1,6 @@
 # Editing pass
 
-An editing, proofreading or cleanup pass on an existing paper, report, page or summary. For a caption, message or short summary, skip the readers and apply `SKILL.md` and `plain-words` directly.
+An editing, proofreading or cleanup pass on an existing paper, report, page or summary. For a caption, message or short summary, skip the readers and apply `SKILL.md` directly.
 
 ## Ground rules
 

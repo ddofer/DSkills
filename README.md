@@ -4,9 +4,8 @@ Skills for Claude Code, Codex and other agents that read the [Agent Skills](http
 
 | Skill | What it does | Starts |
 |---|---|---|
-| `plain-words` | Clear sentences in everyday or standard words: the actor is the subject, the point comes first, nothing is filler, hedge or invented label | On any text a person will read |
-| `writing-for-readers` | What to say and in what order: one message, the finding first, words before numbers, only what this reader needs. Includes an editing-pass guide, paper rules, and short rules for READMEs, reports, reviews and status messages | On any text a person will read |
-| `native-voice` | Rewrites stiff, machine-sounding sentences the way a blunt, fluent researcher would; shortens headings, captions and figure labels; removes AI tells when asked | On drafts an LLM wrote, or text called wordy or AI-sounding |
+| `writing-for-readers` | Clear writing for a reader who wasn't there: one message, the finding first, words before numbers, plain sentences with no filler, hedges or invented labels. Includes an editing-pass guide, paper rules, and short rules for READMEs, reports, reviews and status messages | On any text a person will read |
+| `deslop` | Removes AI tells from a text that is already clear | `/deslop <file or text>` |
 | `academic-rebuttal` | Triages peer reviews, says whether to rebut or resubmit, ranks the experiments, then drafts or checks the rebuttal | When you share reviews |
 | `sit` | Systematic Inventive Thinking: change the structure of what you have first, then ask what the change is good for | When you ask to brainstorm or invent, or `/sit <goal or trade-off>` |
 | `idea-audit` | The doubt that decides whether an idea is worth pursuing, and the cheapest check that settles it | `/idea-audit <idea>` |
@@ -26,7 +25,7 @@ curl -fsSL https://raw.githubusercontent.com/ddofer/DSkills/main/install.sh | ba
 
 This clones the repo to `~/DSkills` (or pulls it) and links each skill into `~/.claude/skills` and `~/.agents/skills`. Run it again to update. Start a new agent session afterwards.
 
-The link step is `link.sh`. It skips a real folder with a skill's name and replaces a symlink with that name. To install one skill, copy its folder instead; `plain-words` and `writing-for-readers` go together, `results-page` needs both, and `council` or `hybrid` need `codex-workers`.
+The link step is `link.sh`. It skips a real folder with a skill's name and replaces a symlink with that name. To install one skill, copy its folder instead; `results-page` needs `writing-for-readers`, and `council` or `hybrid` need `codex-workers`.
 
 ## Codex skills
 

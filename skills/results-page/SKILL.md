@@ -41,4 +41,4 @@ The reader is **cold**: they know the field, not the project, and decide from th
 
 - Define each term, acronym, model and dataset in plain words where it first appears, including in the bottom line, which comes before the definitions.
 - Say plainly when the main hypothesis failed.
-- Prose follows `writing-for-readers` and `plain-words`; figures follow `tufte-data-viz` if it is installed.
+- Prose follows `writing-for-readers`; where its report order and the order above differ, the order above wins for this page; figures follow `tufte-data-viz` if it is installed.

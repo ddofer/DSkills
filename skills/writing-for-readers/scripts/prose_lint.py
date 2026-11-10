@@ -99,7 +99,7 @@ def main():
             hits.append(f'{n}-word sentence: "{" ".join(s.split()[:8])} ..."')
     if hits:
         seen = list(dict.fromkeys(hits))
-        msg = (f'prose-lint on {path.name} (plain-words): ' + '; '.join(seen[:10])
+        msg = (f'prose-lint on {path.name} (writing-for-readers): ' + '; '.join(seen[:10])
                + (f'; and {len(seen) - 10} more' if len(seen) > 10 else '')
                + '. Fix the ones that are real; quoted text and defined terms may stand.')
         print(json.dumps({'hookSpecificOutput': {'hookEventName': 'PostToolUse', 'additionalContext': msg}}))

@@ -1,6 +1,15 @@
-# AI tells
+---
+name: deslop
+description: Removes AI tells from a text after it has been made clear. Manual only; start with /deslop <file or text>.
+disable-model-invocation: true
+argument-hint: "<file or text>"
+---
 
-Use this only when asked to de-slop or humanize a text. These habits mark text as machine-written. Most of them do not make it harder to read, so fix clarity first (`plain-words`) and these last. That pass already removes "not X, but Y", significance bolted onto a fact, chat leftovers, em dashes, stacked hedges, vague nouns and a new word for the same thing.
+Target: $ARGUMENTS
+
+These habits mark text as machine-written. Most of them do not make it harder to read, so make the text clear first with `writing-for-readers`. That pass already removes "not X, but Y", significance bolted onto a fact, chat leftovers, em dashes, stacked hedges, vague nouns and a new word for the same thing. Never trade clarity for a tell.
+
+Then read the piece aloud in your head. The test for each sentence: would a blunt, fluent researcher write it this way?
 
 ## Strong: one sighting is enough to edit
 
@@ -23,6 +32,7 @@ Use this only when asked to de-slop or humanize a text. These habits mark text a
 
 ## How
 
+- When asked to review, show a short before/after table of the worst cases. When asked to edit, edit, then check that no number, citation or reference was lost.
 - Don't trade one habit for another. If every cut clause becomes ", because…", that is the new tell.
 - Don't add typos, slang or forced quirks to seem human. What shows a person wrote it is the particular: the real name, the date, the number, the example, and an opinion stated outright.
 - Don't promise that the text will pass a detector. Detectors misfire on clear, careful writing.
