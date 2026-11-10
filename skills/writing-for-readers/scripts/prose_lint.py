@@ -22,6 +22,12 @@ SLOP = [
     (r'\bis expected to\b', 'announce-then-say'),
     (r'\b(?:delv\w*|leverag\w*|showcas\w*|nuanced)\b', 'buzzword: use the ordinary word or the measured quantity'),
     (r'^\s*(?:Moreover|Furthermore|Additionally|Overall|In conclusion),', 'transition standing in for content: drop it'),
+    (r',\s+(?:highlighting|underscoring|emphasi[sz]ing|showcasing|reinforcing|cementing|solidifying|paving the way)\b', 'trailing -ing comment: cut it, or give the consequence its own sentence'),
+    (r'\b(?:testament to|turning point|setting the stage|pav(?:e|es|ed) the way|(?:ever-)?evolving landscape|plays? an? (?:crucial|key|vital|pivotal) role)\b', 'verdict without content: say what changed and by how much'),
+    (r'\b(?:groundbreaking|cutting-edge|game-chang\w+|revolutioni[sz]\w+|seamless(?:ly)?|unparalleled|transformative|world-class|unlock\w* the (?:full )?potential|harness\w* the power)\b', 'sales talk: say what it does'),
+    (r'\b(?:experts|observers|critics|analysts) (?:say|argue|believe|suggest|note|agree)\b|\bit is (?:widely|generally|commonly) (?:known|accepted|believed|recognized)\b', 'vague source: name it or cut the claim'),
+    (r"\blet(?:'s| us) (?:dive|break (?:this|it) down|explore|unpack)\b|\bhere(?:'s| is) the (?:thing|kicker)\b|\bthis (?:section|document|report) will (?:explore|discuss|cover|outline)\b", 'signpost: say the point'),
+    (r"\b(?:I hope this helps|let me know if you(?:'d| would)? (?:like|want|need)|would you like me to)\b", 'chat leftover: delete'),
 ]
 MAX_WORDS = 40
 
@@ -44,6 +50,7 @@ def project_file(path, name):
 def plain(text, tex):
     text = '\n'.join(ln for ln in text.splitlines()
                      if not (' & ' in ln or ln.lstrip().startswith(('|', '<')) or ln.rstrip().endswith('\\\\')))  # table rows
+    text = re.sub(r'```.*?```', ' ', text, flags=re.S)  # fenced code is not prose
     text = re.sub(r'<[^>]+>', ' ', text)
     if tex:
         text = re.sub(r'\\begin\{(tabular\w*|align\*?|equation\*?)\}.*?\\end\{\1\}', ' ', text, flags=re.S)
@@ -70,8 +77,8 @@ def main():
     tex = path.suffix == '.tex'
     text = plain(raw, tex)
     hits = []
-    if (tex and re.search(r'\\paragraph\{|^\s*(?:\\item\s*)?\\textbf\{[^}]*\.\}', raw, re.M)) or re.search(r'^\s*(?:[-*]\s+|\d+\.\s+)?\*\*[^*\n]+[.:]\*\*\s+\S', raw, re.M):
-        hits.append('run-in bold head ("**X.** text"): an LLM tell; use a heading or a topic sentence')
+    if tex and re.search(r'\\paragraph\{|^\s*(?:\\item\s*)?\\textbf\{[^}]*\.\}', raw, re.M):
+        hits.append('run-in bold head in a paper: use a heading or a topic sentence')
     if len(re.findall(r'\bnot only\b', text, re.I)) > 1:
         hits.append('repeated "not only": state the contrast once')
     if '\u2014' in raw or (tex and re.search(r'(?<!-)---(?!-)', raw)):

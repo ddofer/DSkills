@@ -4,9 +4,9 @@ Skills for Claude Code, Codex and other agents that read the [Agent Skills](http
 
 | Skill | What it does | Starts |
 |---|---|---|
-| `plain-words` | Everyday or standard words, one idea per sentence, no hedges or AI filler | On any text a person will read |
-| `writing-for-readers` | What to say and in what order: the finding first, every number with a comparison. Includes an editing-pass guide and paper rules | On any text a person will read |
-| `native-voice` | Rewrites stiff, machine-sounding sentences the way a fluent native researcher would; shortens headings, captions and figure labels | On drafts an LLM wrote, or text called wordy or AI-sounding |
+| `plain-words` | Clear sentences in everyday or standard words: the actor is the subject, the point comes first, nothing is filler, hedge or invented label | On any text a person will read |
+| `writing-for-readers` | What to say and in what order: one message, the finding first, words before numbers, only what this reader needs. Includes an editing-pass guide, paper rules, and short rules for READMEs, reports, reviews and status messages | On any text a person will read |
+| `native-voice` | Rewrites stiff, machine-sounding sentences the way a blunt, fluent researcher would; shortens headings, captions and figure labels; removes AI tells when asked | On drafts an LLM wrote, or text called wordy or AI-sounding |
 | `academic-rebuttal` | Triages peer reviews, says whether to rebut or resubmit, ranks the experiments, then drafts or checks the rebuttal | When you share reviews |
 | `sit` | Systematic Inventive Thinking: change the structure of what you have first, then ask what the change is good for | When you ask to brainstorm or invent, or `/sit <goal or trade-off>` |
 | `idea-audit` | The doubt that decides whether an idea is worth pursuing, and the cheapest check that settles it | `/idea-audit <idea>` |
@@ -44,7 +44,7 @@ The link step is `link.sh`. It skips a real folder with a skill's name and repla
 
 ## Prose lint hook (Claude Code)
 
-`writing-for-readers/scripts/prose_lint.py` reads the text an agent just wrote to a `.md`, `.tex`, `.rst` or `.txt` file and tells the agent about em dashes, hedges, buzzwords and sentences over 40 words. It never blocks. It skips agent instruction files (`CLAUDE.md`, `AGENTS.md`, `SKILL.md`, `MEMORY.md`) and folders named `.claude`, `memory`, `skills`, `.git`, `.venv` or `node_modules`.
+`writing-for-readers/scripts/prose_lint.py` reads the text an agent just wrote to a `.md`, `.tex`, `.rst` or `.txt` file and tells the agent about em dashes, hedges, buzzwords, verdicts and sales talk, trailing "-ing" comments, vague sources and sentences over 40 words. It never blocks. It skips agent instruction files (`CLAUDE.md`, `AGENTS.md`, `SKILL.md`, `MEMORY.md`) and folders named `.claude`, `memory`, `skills`, `.git`, `.venv` or `node_modules`.
 
 Per project: banned words go in `.claude/rejected-words.txt`, one per line, optionally `phrase -> use instead`; an empty `.claude/prose-lint-off` turns the hook off.
 
