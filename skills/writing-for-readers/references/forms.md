@@ -20,9 +20,9 @@ The reader asks, in this order: what is this, is it for me, how do I run it?
 The reader decides something from this page: whether to believe the result and what to do next.
 
 - Open with the bottom line in two or three sentences: what we learned, how sure we are, what we recommend.
-- Then, in a long report, the findings as a numbered list, each a claim with its number and comparison.
-- Then the evidence, one section per finding. The heading is the claim; one figure or table carries it, and the prose gives only the number a reader would quote. Define a term in a clause where it is first used, not in a glossary ahead of the result.
-- Then what the data are, how things were measured, the limits that change what to believe, next steps and, in a long report, a short glossary.
+- Then what the data are and how they look, in a few lines: what was measured, on what, compared with what.
+- Then the findings. A long report lists them first, numbered, each a claim with its number and comparison. Each finding gets a section whose heading is the claim; one figure or table carries it, and the prose gives only the number a reader would quote. Define a term in a clause where it is first used, not in a glossary ahead of the result.
+- Then the limits that change what to believe, next steps and, in a long report, a short glossary.
 - Leave out the order things were done in, dead ends (unless knowing one saves the reader the same trip), checks that changed nothing, and file paths. Sources go in a list at the end.
 - A section of a report is short: its claim, the evidence, what it means.
 
