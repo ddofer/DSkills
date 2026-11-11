@@ -1,7 +1,6 @@
 ---
 name: codex-workers
-description: Claude plans, delegates and integrates; Codex workers do the substantive reading, diagnosis and implementation through the official Codex plugin, so the Claude session spends few tokens. Manual only; start with /codex-workers <task>.
-disable-model-invocation: true
+description: Claude plans and integrates while Codex workers do the long reading, debugging and edits through the official Codex plugin, so the Claude session spends few tokens. Use only when the user asks for Codex to do the work, names /codex-workers, or asks to delegate to Codex to save Claude tokens.
 argument-hint: "[--write] <what to get done>"
 ---
 
@@ -15,7 +14,7 @@ Task: $ARGUMENTS
 2. **Split into worker tasks.** One substantive task per worker, with a clear done state. Independent tasks run in parallel; dependent ones run in sequence. If the task is small enough that writing the brief costs more than doing it, do it in Claude.
 3. **Launch.** Follow [references/codex-calls.md](references/codex-calls.md): prompt file, run from the repo root, foreground runner inside a background Bash, `--json`, `--write` only for a worker that is meant to edit. Parallel writers must touch disjoint files or use a worktree.
 4. **Integrate.** Read each result once. Keep the decisions, evidence and file:line references; drop the narration. Continue a specific worker with its thread id instead of re-sending context.
-5. **Verify in proportion to the risk.** Run the targeted test or check the worker named; do not run the full suite unless the change warrants it. Review cycles are for changes that justify them (`/codex:review` or `/codex:adversarial-review`).
+5. **Verify in proportion to the risk.** Run the targeted test or check the worker named; do not run the full suite unless the change warrants it. Review cycles are for changes that justify them (Reviews in codex-calls.md).
 6. **Report** to the user in your own words: what was done, what the evidence is, what was left undone. Do not paste the Codex transcript.
 
 ## Rules

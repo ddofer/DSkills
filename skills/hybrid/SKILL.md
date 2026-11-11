@@ -1,11 +1,10 @@
 ---
 name: hybrid
-description: Runs a Claude Code Workflow in which some stages are Codex agents and the rest are Claude agents. Claude decomposes the task, assigns each stage to the model that fits, and integrates. Manual only; start with /hybrid <task>.
-disable-model-invocation: true
+description: Runs a Claude Code Workflow in which some stages are Codex agents and the rest are Claude agents. Claude decomposes the task, assigns each stage to the model that fits, and integrates. Use only when the user names /hybrid or asks for a mixed Claude and Codex workflow.
 argument-hint: "<task to orchestrate>"
 ---
 
-Typing `/hybrid` is the user's opt-in to the Workflow tool for this task. It does not turn ultracode on globally. Use the native Workflow tool; do not build another orchestrator, and do not fall back to a different framework if Workflow is unavailable: say so and offer `/codex-workers` instead.
+The user naming `/hybrid` is their opt-in to the Workflow tool for this task; if you chose this skill yourself, ask first. It does not turn ultracode on globally. Use the native Workflow tool; do not build another orchestrator, and do not fall back to a different framework if Workflow is unavailable: say so and offer `/codex-workers` instead.
 
 Task: $ARGUMENTS
 

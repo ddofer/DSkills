@@ -63,7 +63,14 @@ Codex reads `AGENTS.md`, not `CLAUDE.md`. In a repo with only `CLAUDE.md`, say i
 
 ## Reviews
 
-For a review of local git changes use the plugin's own commands, which already carry the review contract: `/codex:review` (plain) or `/codex:adversarial-review <focus>` (challenges the design). Both are read-only.
+The plugin's `/codex:review` and `/codex:adversarial-review` are user-only commands, so Claude and subagents call the runner. Both are read-only.
+
+- **Local git changes:** `node "$CODEX" adversarial-review --scope auto <focus>` (or `--base <ref>`; `review --scope auto` is the plain review, no focus). Keep a flag before the focus: a lone argument is re-split into flags. The focus is weighted, not exclusive.
+- **Anything else, or one concern only** (a paper, numbers, a plan, a folder): a read-only `task`, one concern per worker:
+  `<task>Try to refute <claim or change> in <files>. Check only <concern>; ignore everything else.</task>`
+  `<output_contract>Each finding: file:line, what is wrong, evidence, confidence 0-1. "No finding" is a valid answer.</output_contract>`
+
+Check each finding against the source before passing it on: a reviewer told to find problems reports some.
 
 ## Failures
 

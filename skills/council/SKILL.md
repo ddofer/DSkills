@@ -1,7 +1,6 @@
 ---
 name: council
-description: Multi-model deliberation on demand. Brings a Codex perspective next to Claude's for a second opinion, an adversarial critique, independent attempts or a judgment, only where that improves the answer. Works without Workflow. Manual only; start with /council <question or decision>.
-disable-model-invocation: true
+description: A Codex view next to Claude's - a second opinion, a focused adversarial review, independent attempts or a judge. Use only when the user asks for Codex or a second model, or names /council, including for a reviewer subagent or workflow stage.
 argument-hint: "<question, decision, draft or diff to deliberate>"
 ---
 
@@ -12,7 +11,7 @@ Question: $ARGUMENTS
 ## Forms, smallest first
 
 1. **Second opinion.** One read-only Codex task with the question and the evidence you have. Use for "is this reading right", "what am I missing", a plan check.
-2. **Adversarial critique.** Ask one side to refute. For local git changes use `/codex:adversarial-review <focus>`; for a plan or draft, a Codex task told to argue against it with file:line evidence. Use before a risky change or a claim the user will act on.
+2. **Focused adversarial review.** One read-only Codex worker per concern, told to refute only that concern (Reviews in codex-calls.md). Use before a risky change or a claim the user will act on.
 3. **Independent attempts.** A Claude subagent and a Codex worker get the same brief, blind to each other, in parallel. Compare where they agree and disagree; agreement is weak evidence, a disagreement is the finding. Use for design choices, stuck bugs and ideas.
 4. **Judge.** A third voice scores the attempts against stated criteria. Only when you cannot decide from the comparison yourself.
 

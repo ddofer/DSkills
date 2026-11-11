@@ -11,9 +11,9 @@ Skills for Claude Code, Codex and other agents that read the [Agent Skills](http
 | `idea-audit` | The doubt that decides whether an idea is worth pursuing, and the cheapest check that settles it | `/idea-audit <idea>` |
 | `skim-review` | Finds strong findings that fell out of a paper, or that a skimming reviewer would miss. Ends with a ready-or-not verdict | `/skim-review <paper> [--full]` |
 | `results-page` | One self-contained results page from finished analyses | `/results-page` |
-| `codex-workers` | Claude plans and integrates; Codex reads, debugs and edits | `/codex-workers [--write] <task>` |
-| `council` | A Codex view next to Claude's: a second opinion, a critique, two independent attempts, or a judge | `/council <question>` |
-| `hybrid` | A run of Claude Code's Workflow tool in which some stages are Codex agents | `/hybrid <task>` |
+| `codex-workers` | Claude plans and integrates; Codex reads, debugs and edits | When you ask for Codex to do the work, or `/codex-workers [--write] <task>` |
+| `council` | A Codex view next to Claude's: a second opinion, a focused adversarial review, two independent attempts, or a judge | When you ask for Codex or a second model, or `/council <question>` |
+| `hybrid` | A run of Claude Code's Workflow tool in which some stages are Codex agents | When you name it: `/hybrid <task>` |
 
 A skill that starts with `/` runs only when you type it. In Codex, type `$name`.
 
